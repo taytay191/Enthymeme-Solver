@@ -1,0 +1,1118 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace EnthymemeSolver
+{
+    class Program
+    {
+        public class enthymeme
+        {
+            public char[] Name { get; set; }
+            public premise P1 { get; set; }
+            public premise PA { get; set; }
+            public bool Valid { get; set; }
+            public List<string> Proof { get; set; }
+        }
+        public class premise
+        {
+            public char Subject { get; set; }
+            public char Predicate { get; set; }
+            public char Quality { get; set; }
+            public char Quantity { get; set; }
+        }
+        static void Main(string[] args)
+        {
+            List<char[]> Master = GetList();
+            int i = 0;
+            string path = "C:\\Users\\tjmcg\\Documents\\log.txt";
+            string path2 = "C:\\Users\\tjmcg\\Documents\\output.txt";
+            foreach (Char[] name in Master)
+            {
+
+                enthymeme temp = new enthymeme();
+                temp.Name = name;
+                temp = PopulateEnthymeme(temp);
+                temp.Proof.Add("");
+                temp.Proof.Add("====================================================");
+                string p1 = String.Format("Premise 1: {0}", identifyp1(temp));
+                temp.Proof.Add(p1);
+                string pa = String.Format("Premise A: {0}", identifypA(temp));
+                temp.Proof.Add(pa);
+                temp.Proof.Add("====================================================");
+                temp = ThirdOrder(temp);
+                temp = SecondOrder(temp);
+                temp = FirstOrder(temp);
+                using (StreamWriter file = File.AppendText(path))
+                {
+                    foreach (string s in temp.Proof)
+                    {
+                        file.WriteLine(s);
+                    }
+                }
+                if (temp.Valid == false)
+                {
+                    i++;
+                    using (StreamWriter file = File.AppendText(path2))
+                    {
+                        foreach (string s in temp.Proof)
+                        {
+                            file.WriteLine(s);
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("Invalids:" + i.ToString());
+        }
+        static string identifyp1(enthymeme enth)
+        {
+            StringBuilder sb = new StringBuilder();
+            if (enth.Name[0] == 'A')
+            {
+                sb.Append("All ");
+            }
+            else if (enth.Name[0] == 'E')
+            {
+                sb.Append("No ");
+            }
+            else
+            {
+                sb.Append("Some ");
+            }
+            sb.Append(enth.P1.Subject + " is ");
+            if (enth.Name[0] == 'O')
+            {
+                sb.Append("not ");
+            }
+            sb.Append(enth.P1.Predicate + ".");
+            string P1 = sb.ToString();
+            return P1;
+        }
+        static string identifypA(enthymeme enth)
+        {
+            StringBuilder sb = new StringBuilder();
+            if (enth.Name[1] == 'A')
+            {
+                sb.Append("All ");
+            }
+            else if (enth.Name[1] == 'E')
+            {
+                sb.Append("No ");
+            }
+            else
+            {
+                sb.Append("Some ");
+            }
+            sb.Append(enth.PA.Subject + " is ");
+            if (enth.Name[1] == 'O')
+            {
+                sb.Append("not ");
+            }
+            sb.Append(enth.PA.Predicate + ".");
+            string PA = sb.ToString();
+            return PA;
+        }
+        static List<char[]> GetList()
+        {
+            string total = "A,A,A} [A,A,E} [A,A,I} [A,A,O} [A,E,A} [A,E,E} [A,E,I} [A,E,O} [A,I,A} [A,I,E} [A,I,I} [A,I,O} [A,O,A} [A,O,E} [A,O,I} [A,O,O} [E,A,A} [E,A,E} [E,A,I} [E,A,O} [E,E,A} [E,E,E} [E,E,I} [E,E,O} [E,I,A} [E,I,E} [E,I,I} [E,I,O} [E,O,A} [E,O,E} [E,O,I} [E,O,O} [I,A,A} [I,A,E} [I,A,I} [I,A,O} [I,E,A} [I,E,E} [I,E,I} [I,E,O} [I,I,A} [I,I,E} [I,I,I} [I,I,O} [I,O,A} [I,O,E} [I,O,I} [I,O,O} [O,A,A} [O,A,E} [O,A,I} [O,A,O} [O,E,A} [O,E,E} [O,E,I} [O,E,O} [O,I,A} [O,I,E} [O,I,I} [O,I,O} [O,O,A} [O,O,E} [O,O,I} [O,O,O}";
+            string[] ListTotal = total.Split('[');
+            List<char[]> ListTotalChar = new List<char[]>();
+            foreach (string unit in ListTotal)
+            {
+                if (!(unit == null))
+                {
+                    char[] temp = new char[3];
+                    temp[0] = unit[0];
+                    temp[1] = unit[2];
+                    temp[2] = unit[4];
+                    ListTotalChar.Add(temp);
+                }
+            }
+            return ListTotalChar;
+        }
+        static string figurenumber(char input)
+        {
+            if (input == 'A')
+            {
+                return "1";
+            }
+            else if (input == 'E')
+            {
+                return "2";
+            }
+            else if (input == 'I')
+            {
+                return "3";
+            }
+            else
+            {
+                return "4";
+            }
+        }
+        static string reversefigurenumber(char input)
+        {
+            if (input == 'A')
+            {
+                return "4";
+            }
+            else if (input == 'E')
+            {
+                return "2";
+            }
+            else if (input == 'I')
+            {
+                return "3";
+            }
+            else
+            {
+                return "1";
+            }
+        }
+        static enthymeme PopulateEnthymeme(enthymeme enth)
+        {
+            char[] Name = enth.Name;
+            enth.Valid = false;
+            premise p1 = new premise();
+            premise pa = new premise();
+            if (Name[0] == 'A')
+            {
+                p1.Quality = 'A';
+                p1.Quantity = 'U';
+                if (Name[2] == 'A' || Name[2] == 'I')
+                {
+                    p1.Subject = 'Y';
+                    p1.Predicate = 'X';
+                }
+                else
+                {
+                    p1.Subject = 'X';
+                    p1.Predicate = 'Y';
+                }
+            }
+            else if (Name[0] == 'E')
+            {
+                p1.Quality = 'N';
+                p1.Quantity = 'U';
+                if (Name[2] == 'A' || Name[2] == 'I')
+                {
+                    p1.Subject = 'Y';
+                    p1.Predicate = 'X';
+                }
+                else
+                {
+                    p1.Subject = 'X';
+                    p1.Predicate = 'Y';
+                }
+            }
+            else if (Name[0] == 'I')
+            {
+                p1.Quality = 'A';
+                p1.Quantity = 'P';
+                if (Name[2] == 'A' || Name[2] == 'I')
+                {
+                    p1.Subject = 'Y';
+                    p1.Predicate = 'X';
+                }
+                else
+                {
+                    p1.Subject = 'X';
+                    p1.Predicate = 'Y';
+                }
+
+            }
+            else if (Name[0] == 'O')
+            {
+                p1.Quality = 'N';
+                p1.Quantity = 'P';
+                if (Name[2] == 'A' || Name[2] == 'I')
+                {
+                    p1.Subject = 'Y';
+                    p1.Predicate = 'X';
+                }
+                else
+                {
+                    p1.Subject = 'Y';
+                    p1.Predicate = 'X';
+                }
+
+            }
+            if (Name[1] == 'A')
+            {
+                pa.Quality = 'A';
+                pa.Quantity = 'U';
+                if (Name[2] == 'A' || Name[2] == 'E')
+                {
+                    pa.Subject = 'Z';
+                    pa.Predicate = 'Y';
+                }
+                else
+                {
+                    pa.Subject = 'Y';
+                    pa.Predicate = 'Z';
+                }
+            }
+            else if (Name[1] == 'E')
+            {
+                pa.Quality = 'N';
+                pa.Quantity = 'U';
+                if (Name[2] == 'A' || Name[2] == 'E')
+                {
+                    pa.Subject = 'Z';
+                    pa.Predicate = 'Y';
+                }
+                else
+                {
+                    pa.Subject = 'Y';
+                    pa.Predicate = 'Z';
+                }
+            }
+            else if (Name[1] == 'I')
+            {
+                pa.Quality = 'A';
+                pa.Quantity = 'P';
+                if (Name[2] == 'A' || Name[2] == 'E')
+                {
+                    pa.Subject = 'Z';
+                    pa.Predicate = 'Y';
+                }
+                else
+                {
+                    pa.Subject = 'Y';
+                    pa.Predicate = 'Z';
+                }
+            }
+            else if (Name[1] == 'O')
+            {
+                pa.Quality = 'N';
+                pa.Quantity = 'P';
+                if (Name[2] == 'A' || Name[2] == 'E')
+                {
+                    pa.Subject = 'Z';
+                    pa.Predicate = 'Y';
+                }
+                else
+                {
+                    pa.Subject = 'Y';
+                    pa.Predicate = 'Z';
+                }
+            }
+            enth.P1 = p1;
+            enth.PA = pa;
+            enth.Proof = new List<string>();
+            return enth;
+        }
+        static enthymeme ThirdOrder(enthymeme enth)
+        {
+            enth.Proof.Add("Case (1): 3rd Order Enthymeme");
+///            enth.Proof.Add(String.Format("  Quality P1: {0}, Quality PA: {1}", enth.P1.Quality, enth.PA.Quality));
+
+            if (enth.P1.Quality == 'N' && enth.PA.Quality == 'N')
+            {
+                enth.Proof.Add("  R4: Impossible");
+                return enth;
+            }
+            else
+            {
+                if (enth.P1.Quality == 'N' || enth.PA.Quality == 'N')
+                {
+                    enth.Proof.Add("  R5: Negative Conclusion");
+                    if ((enth.P1.Quantity == 'U' && enth.P1.Subject == 'Y') || (enth.P1.Quality == 'N' && enth.P1.Predicate == 'Y') || (enth.PA.Quantity == 'U' && enth.PA.Subject == 'Y') || (enth.PA.Quality == 'N' && enth.PA.Predicate == 'Y'))
+                    {
+                        enth.Proof.Add("  Case (1a): P1 as Major premise, PA as Minor premise");
+                        if (enth.P1.Quantity == 'U')
+                        {
+                            if (enth.PA.Quantity == 'U')
+                            {
+                                if ((enth.P1.Quality == 'N' && enth.PA.Subject == 'Z') || (enth.PA.Quality == 'N' && enth.P1.Subject == 'X'))
+                                {
+                                    enth.Proof.Add(String.Format("    R6: {0}{1}E-{2}", enth.Name[0].ToString(), enth.Name[1].ToString(), figurenumber(enth.Name[2])));
+                                    enth.Valid = true;
+                                }
+                                else
+                                {
+                                    enth.Proof.Add("    R3: Impossible");
+                                }
+                            }
+                            else
+                            {
+                                if (enth.P1.Quality == 'N')
+                                {
+                                    enth.Proof.Add(String.Format("    R2+3: {0}{1}O-{2}", enth.Name[0], enth.Name[1], figurenumber(enth.Name[2])));
+                                    enth.Valid = true;
+                                }
+                                else
+                                {
+                                    if (enth.P1.Subject == 'X' && enth.PA.Predicate == 'Y')
+                                    {
+                                        enth.Proof.Add(String.Format("    R3: {0}{1}O-2", enth.Name[0], enth.Name[1]));
+                                        enth.Valid = true;
+                                    }
+                                    else
+                                    {
+                                        enth.Proof.Add("    R2+3: Impossible");
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (enth.PA.Quantity == 'U')
+                            {
+                                if (enth.P1.Quality == 'N')
+                                {
+                                    if (enth.P1.Predicate == 'X' && enth.PA.Subject == 'Y')
+                                    {
+                                        enth.Proof.Add(String.Format("    R3: {0}{1}O-2", enth.Name[0], enth.Name[1]));
+                                        enth.Valid = true;
+                                    }
+                                    else
+                                    {
+                                        enth.Proof.Add("    R2+3: Impossible");
+                                    }
+                                }
+                                else
+                                {
+                                    enth.Proof.Add("    R3: Impossible");
+                                }
+                            }
+                            else
+                            {
+                                enth.Proof.Add("    R2+3: Impossible");
+                            }
+                        }
+
+                        /// Break
+
+                        enth.Proof.Add("  Case (1b): PA as Major premise, P1 as Minor premise");
+                        if (enth.PA.Quantity == 'U')
+                        {
+                            if (enth.P1.Quantity == 'U')
+                            {
+                                if ((enth.PA.Quality == 'N' && enth.P1.Subject == 'X') || (enth.P1.Quality == 'N' && enth.PA.Subject == 'Z'))
+                                {
+                                    enth.Proof.Add(String.Format("    R6: {0}{1}E-{2}", enth.Name[1].ToString(), enth.Name[0].ToString(), reversefigurenumber(enth.Name[2])));
+                                    enth.Valid = true;
+                                    return enth;
+                                }
+                                else
+                                {
+                                    enth.Proof.Add("    R3: Impossible");
+                                    return enth;
+                                }
+                            }
+                            else
+                            {
+                                if (enth.PA.Quality == 'N')
+                                {
+                                    enth.Proof.Add(String.Format("    R2+3: {0}{1}O-{2}", enth.Name[1], enth.Name[0], reversefigurenumber(enth.Name[2])));
+                                    enth.Valid = true;
+                                    return enth;
+                                }
+                                else
+                                {
+                                    if (enth.PA.Subject == 'Z' && enth.P1.Predicate == 'Y')
+                                    {
+                                        enth.Proof.Add(String.Format("    R3: {0}{1}O-2", enth.Name[1], enth.Name[0]));
+                                        enth.Valid = true;
+                                        return enth;
+                                    }
+                                    else
+                                    {
+                                        enth.Proof.Add("    R2+3: Impossible");
+                                        return enth;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (enth.P1.Quantity == 'U')
+                            {
+                                if (enth.PA.Quality == 'N')
+                                {
+                                    if (enth.PA.Predicate == 'Z' && enth.P1.Subject == 'Y')
+                                    {
+                                        enth.Proof.Add(String.Format("    R3: {0}{1}O-2", enth.Name[1], enth.Name[0]));
+                                        enth.Valid = true;
+                                        return enth;
+                                    }
+                                    else
+                                    {
+                                        enth.Proof.Add("    R2+3: Impossible");
+                                        return enth;
+                                    }
+                                }
+                                else
+                                {
+                                    enth.Proof.Add("    R3: Impossible");
+                                    return enth;
+                                }
+                            }
+                            else
+                            {
+                                enth.Proof.Add("    R2+3: Impossible");
+                                return enth;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        enth.Proof.Add("  R2: Impossible");
+                        return enth;
+                    }
+                }
+                else
+                {
+                    if ((enth.P1.Quantity == 'U' && enth.P1.Subject == 'Y') || (enth.PA.Quantity == 'U' && enth.PA.Subject == 'Y'))
+                    {
+                        enth.Proof.Add("  Case (1a): P1 as the major term, PA as the minor term");
+                        if (enth.P1.Quantity == 'P' || enth.PA.Quantity == 'P')
+                        {
+                            enth.Proof.Add(String.Format("    R3: {0}{1}I-{2}", enth.Name[0], enth.Name[1], figurenumber(enth.Name[2])));
+                            enth.Valid = true;
+                        }
+                        else
+                        {
+                            enth.Proof.Add("    R6: A Conclusion");
+///                            enth.Proof.Add("**PA Subject " + enth.PA.Subject);
+///                            enth.Proof.Add("**Form: " + enth.Name[0] + enth.Name[1] + enth.Name[2]);
+                            if (enth.PA.Subject == 'Z')
+                            {
+                                enth.Proof.Add(String.Format("   R3: {0}{1}A-{2}", enth.Name[0], enth.Name[1], figurenumber(enth.Name[2])));
+                                enth.Valid = true;
+                            }
+                            else
+                            {
+                                enth.Proof.Add("    R3: Impossible");
+                            }
+                        }
+
+                        /// Break
+
+                        enth.Proof.Add("  Case (1b): PA as the major term, P1 as the minor term");
+                        if (enth.P1.Quality == 'P' || enth.PA.Quality == 'P')
+                        {
+                            enth.Proof.Add(String.Format("    R3: {0}{1}I-{2}", enth.Name[1], enth.Name[0], reversefigurenumber(enth.Name[2])));
+                            enth.Valid = true;
+                            return enth;
+                        }
+                        else
+                        {
+                            enth.Proof.Add("    R6: A Conclusion");
+                            if (enth.P1.Subject == 'X')
+                            {
+                                enth.Proof.Add(String.Format("   R3: {0}{1}A-{2}", enth.Name[1], enth.Name[0], reversefigurenumber(enth.Name[2])));
+                                enth.Valid = true;
+                                return enth;
+                            }
+                            else
+                            {
+                                enth.Proof.Add("    R3: Impossible");
+                                return enth;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        enth.Proof.Add("  R2: Impossible");
+                        return enth;
+                    }
+                }
+            }
+        }
+        static enthymeme SecondOrder(enthymeme enth)
+        {
+            enth.Proof.Add("Case (2): 2nd Order Enthymeme");
+            enth.Proof.Add("  Case (2a): P1 as conclusion, PA as Major premise");
+            if (enth.P1.Subject == 'Y')
+            {
+                enth.Proof.Add("    Standard Form: Impossible");
+            }
+            else
+            {
+                if (enth.P1.Quality == 'A' && enth.PA.Quality == 'N')
+                {
+                    enth.Proof.Add("    R5: Impossible");
+                }
+                else
+                {
+                    if (enth.PA.Quality == 'N')
+                    {
+                        enth.Proof.Add("    R4: Affirmative Minor");
+                        if (enth.PA.Quantity == 'U' && enth.P1.Quantity == 'P')
+                        {
+                            string figure = "";
+                            if (enth.PA.Subject == 'Z')
+                            {
+                                figure = "1,3";
+                            }
+                            else if (enth.PA.Subject == 'Y')
+                            {
+                                figure = "2,4";
+                            }
+                            enth.Proof.Add(String.Format("    R2+3+6: {0}I{1}-{2}", enth.Name[1], enth.Name[0], figure));
+                            enth.Valid = true;
+                        }
+                        else if (enth.PA.Quantity == 'U' && enth.P1.Quantity == 'U')
+                        {
+                            string figure = "";
+                            if (enth.PA.Subject == 'Z')
+                            {
+                                figure = "1";
+                            }
+                            else if (enth.PA.Subject == 'Y')
+                            {
+                                figure = "2";
+                            }
+                            enth.Proof.Add(String.Format("    R3: {0}A{1}-{2}", enth.Name[1], enth.Name[0], figure));
+                            enth.Valid = true;
+                        }
+                        else if (enth.PA.Quantity == 'U' && enth.P1.Quantity == 'P')
+                        {
+                            enth.Proof.Add("    R2+3+6: Impossible");
+                        }
+                        else
+                        {
+                            enth.Proof.Add("    R2+3: Impossible");
+                        }
+                    }
+                    else if (enth.PA.Quality == 'A')
+                    {
+                        if (enth.P1.Quality == 'N')
+                        {
+                            if (enth.PA.Quantity == 'P')
+                            {
+                                enth.Proof.Add("    R3: Impossible");
+                            }
+                            else
+                            {
+                                if (enth.P1.Quantity == 'U')
+                                {
+                                    enth.Proof.Add("    R2+3:Impossible");
+                                }
+                                else
+                                {
+                                    if (enth.P1.Quantity == 'U')
+                                    {
+                                        enth.Proof.Add("    R2+3:Impossible");
+                                        return enth;
+                                    }
+                                    else
+                                    {
+                                        if (enth.PA.Subject == 'Y')
+                                        {
+                                            enth.Proof.Add(String.Format("    R2+3+6: AOO-2"));
+                                            enth.Valid = true;
+                                            return enth;
+                                        }
+                                        else
+                                        {
+                                            enth.Proof.Add("    R3: Impossible");
+                                            return enth;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            enth.Proof.Add("    R5: Affirmative Minor");
+                            if (enth.P1.Quantity == 'U' && enth.PA.Quantity == 'P')
+                            {
+                                enth.Proof.Add("    R2+3: Impossible");
+                            }
+                            else if (enth.P1.Quantity == 'U' && enth.PA.Quantity == 'U')
+                            {
+                                enth.Proof.Add("    R2+3: A Minor");
+                                if (enth.PA.Subject == 'Z')
+                                {
+                                    enth.Proof.Add(String.Format("    R2+3: {0}A{1}-1", enth.Name[1], enth.Name[0]));
+                                    enth.Valid = true;
+                                }
+                                else
+                                {
+                                    enth.Proof.Add("    R2+3: Impossible");
+                                }
+                            }
+                            else if (enth.P1.Quantity == 'P' && enth.PA.Quantity == 'U')
+                            {
+
+                                enth.Proof.Add(String.Format("    R6: {0}I{1}-1,3", enth.Name[1], enth.Name[0]));
+                                enth.Valid = true;
+                            }
+                            else if (enth.P1.Quantity == 'P' && enth.PA.Quantity == 'P')
+                            {
+                                string figure = "";
+                                if (enth.PA.Subject == 'Z')
+                                {
+                                    figure = "3";
+                                }
+                                else if (enth.PA.Subject == 'Y')
+                                {
+                                    figure = "4";
+                                }
+                                enth.Proof.Add(String.Format("    R2: {0}A{1}-{2}", enth.Name[1], enth.Name[0], figure));
+                                enth.Valid = true;
+                            }
+                        }
+                    }
+                }
+            }
+            enth.Proof.Add("  Case (2b): PA as conclusion, P1 as Major premise");
+///            enth.Proof.Add(String.Format("**enth.PA.Subject = {0}", enth.PA.Subject));
+            if (enth.PA.Subject == 'Y')
+            {
+                enth.Proof.Add("    Standard Form: Impossible");
+                return enth;
+            }
+            else
+            {
+                if (enth.PA.Quality == 'A' && enth.P1.Quality == 'N')
+                {
+                    enth.Proof.Add("    R5: Impossible");
+                    return enth;
+                }
+                else
+                {
+                    if (enth.P1.Quality == 'N')
+                    {
+                        enth.Proof.Add("    R4: Affirmative Minor");
+                        if (enth.P1.Quantity == 'U' && enth.PA.Quantity == 'P')
+                        {
+                            enth.Proof.Add("    R6: I minor");
+                            string figure = "";
+                            if (enth.P1.Subject == 'X')
+                            {
+                                figure = "1,3";
+                            }
+                            else if (enth.P1.Subject == 'Y')
+                            {
+                                figure = "2,4";
+                            }
+                            enth.Proof.Add(String.Format("    R2+3+6: {0}I{1}-{2}", enth.Name[0], enth.Name[1], figure));
+                            enth.Valid = true;
+                            return enth;
+                        }
+                        else if(enth.P1.Quantity == 'U' && enth.PA.Quantity == 'U')
+                        {
+                            string figure = "";
+                            if (enth.PA.Subject == 'Z')
+                            {
+                                figure = "1";
+                            }
+                            else if (enth.PA.Subject == 'Y')
+                            {
+                                figure = "2";
+                            }
+                            enth.Proof.Add(String.Format("    R3: {0}A{1}-{2}", enth.Name[0], enth.Name[1], figure));
+                            enth.Valid = true;
+                            return enth;
+                        }
+                        else if (enth.PA.Quantity == 'U' && enth.P1.Quantity == 'P')
+                        {
+                            enth.Proof.Add("    R2+3+6: Impossible");
+                            return enth;
+                        }
+                        else
+                        {
+                            enth.Proof.Add("    R2+3: Impossible");
+                            return enth;
+                        }
+                    }
+                    else
+                    {
+                        if (enth.PA.Quality == 'N')
+                        {
+                            if (enth.P1.Quantity == 'P')
+                            {
+                                enth.Proof.Add("    R3: Impossible");
+                                return enth;
+                            }
+                            else
+                            {
+                                if (enth.PA.Quantity == 'U')
+                                {
+                                    enth.Proof.Add("    R2+3:Impossible");
+                                    return enth;
+                                }
+                                else
+                                {
+                                    if(enth.P1.Subject == 'Y')
+                                    {
+                                        enth.Proof.Add(String.Format("    R2+3+6: AOO-2"));
+                                        enth.Valid = true;
+                                        return enth;
+                                    }
+                                    else
+                                    {
+                                        enth.Proof.Add("    R3: Impossible");
+                                        return enth;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            enth.Proof.Add("    R5: Affirmative Minor");
+                            if (enth.PA.Quantity == 'U' && enth.P1.Quantity == 'P')
+                            {
+                                enth.Proof.Add("    R2+3: Impossible");
+                                return enth;
+                            }
+                            else if (enth.PA.Quantity == 'U' && enth.P1.Quantity == 'U')
+                            {
+                                enth.Proof.Add("    R2+3: A Minor");
+                                if (enth.PA.Subject == 'Z')
+                                {
+                                    enth.Proof.Add(String.Format("    R2+3: {0}A{1}-1", enth.Name[0], enth.Name[1]));
+                                    enth.Valid = true;
+                                    return enth;
+                                }
+                                else
+                                {
+                                    enth.Proof.Add("    R2+3: Impossible");
+                                    return enth;
+                                }
+                            }
+                            else if (enth.PA.Quantity == 'P' && enth.P1.Quantity == 'U')
+                            {
+
+                                enth.Proof.Add("    R6: {0}I{1}-1,3");
+                                enth.Valid = true;
+                                return enth;
+                            }
+                            else if (enth.PA.Quantity == 'P' && enth.P1.Quantity == 'P')
+                            {
+                                string figure = "";
+                                if (enth.P1.Subject == 'X')
+                                {
+                                    figure = "3";
+                                }
+                                else if (enth.P1.Subject == 'Y')
+                                {
+                                    figure = "4";
+                                }
+                                enth.Proof.Add(String.Format("    R2: {0}A{1}-{2}", enth.Name[0], enth.Name[1], figure));
+                                enth.Valid = true;
+                                return enth;
+                            }
+                            else
+                            {
+                                return enth;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        static enthymeme FirstOrder(enthymeme enth)
+        {
+            enth.Proof.Add("Case (3): 1st Order Enthymeme");
+            enth.Proof.Add("  Case (3a): P1 is the conclusion and PA is the minor premise");
+///            enth.Proof.Add("**P1 Quantity: " + enth.P1.Quantity);
+            if (enth.P1.Subject == 'Y')
+            {
+                if (enth.P1.Quality == 'A' && enth.PA.Quality == 'N')
+                {
+                    enth.Proof.Add("    R5: Impossible");
+                }
+                else
+                {
+                    if (enth.PA.Quality == 'N')
+                    {
+                        enth.Proof.Add("    R4: Affirmative Major");
+                        if (enth.P1.Quantity == 'P')
+                        {
+                            if (enth.PA.Quantity == 'P')
+                            {
+                                if (enth.PA.Predicate == 'Z')
+                                {
+                                    enth.Proof.Add(String.Format("    R2: A{0}{1}-3", enth.Name[1], enth.Name[0]));
+                                    enth.Valid = true;
+                                }
+                                else
+                                {
+                                    enth.Proof.Add("    R3: Impossible");
+                                }
+                            }
+                            else
+                            {
+                                if (enth.PA.Quantity == 'P')
+                                {
+                                    enth.Proof.Add("    R2+3: Impossible");
+                                }
+                                else
+                                {
+                                    enth.Proof.Add(String.Format("    R3: A{0}{1}-1,3", enth.Name[1], enth.Name[0]));
+                                    enth.Valid = true;
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            if (enth.PA.Quantity == 'P')
+                            {
+                                enth.Proof.Add("    R2+3: Impossible");
+                            }
+                            else
+                            {
+                                enth.Proof.Add(String.Format("    R3: A{0}{1}-1,3", enth.Name[1], enth.Name[0]));
+                                enth.Valid = true;
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        if (enth.P1.Quality == 'N')
+                        {
+                            if (enth.P1.Quantity == 'U')
+                            {
+                                if (enth.PA.Predicate == 'Y')
+                                {
+                                    enth.Proof.Add(String.Format("    R2+3: E{0}{1}-3,4", enth.Name[1], enth.Name[0]));
+                                    enth.Valid = true;
+                                }
+                                else
+                                {
+                                    enth.Proof.Add("    R3: Impossible");
+                                }
+                            }
+                            else
+                            {
+                                if (enth.PA.Quantity == 'P')
+                                {
+                                    enth.Proof.Add("    R2+3: Impossible");
+                                }
+                                else
+                                {
+                                    if (enth.PA.Subject == 'Z')
+                                    {
+                                        enth.Proof.Add(String.Format("    R6: O{0}{1}-3", enth.Name[1], enth.Name[0]));
+                                        enth.Valid = true;
+                                    }
+                                    else if (enth.PA.Subject == 'Y')
+                                    {
+                                        enth.Proof.Add("    R2+3: Impossible");
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            enth.Proof.Add("    R5: Affirmative Major");
+                            if (enth.P1.Quantity == 'P')
+                            {
+                                if(enth.PA.Quantity == 'P')
+                                {
+                                    string figure = "";
+                                    if (enth.PA.Subject == 'Z')
+                                    {
+                                        figure = "3";
+                                    }
+                                    else if (enth.PA.Subject == 'Y')
+                                    {
+                                        figure = "1";
+                                    }
+                                    enth.Proof.Add(String.Format("    R2: A{0}{1}-{2}", enth.Name[1], enth.Name[0], figure));
+                                    enth.Valid = true;
+                                }
+                                else
+                                {
+                                    if (enth.PA.Subject == 'Z')
+                                    {
+                                        enth.Proof.Add(String.Format("    R6: I{0}{1}-1,3", enth.Name[1], enth.Name[0]));
+                                        enth.Valid = true;
+                                    }
+                                    else
+                                    {
+                                        enth.Proof.Add("    R2+6: Impossible");
+                                    }
+                                }
+                            }
+                            else
+                            {
+///                                enth.Proof.Add("**PA Quantity: " + enth.PA.Quantity);
+                                if (enth.PA.Quantity == 'P')
+                                {
+                                    enth.Proof.Add("    R2+3: Impossible");
+                                }
+                                else
+                                {
+                                    if (enth.PA.Subject == 'Y')
+                                    {
+                                        enth.Proof.Add(String.Format("    R2+3: AAA-1"));
+                                        enth.Valid = true;
+                                    }
+                                    else
+                                    {
+                                        enth.Proof.Add("    R2+3: Impossible");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                enth.Proof.Add("    Standard Form: Impossible");
+            }
+
+            /// Bridge ///
+
+            enth.Proof.Add("  Case (3b): PA is the conclusion and P1 is the minor premise");
+            if (enth.PA.Subject == 'Y')
+            {
+                if (enth.PA.Quality == 'A' && enth.P1.Quality == 'N')
+                {
+                    enth.Proof.Add("    R5: Impossible");
+                }
+                else
+                {
+                    if (enth.P1.Quality == 'N')
+                    {
+                        enth.Proof.Add("    R4: Affirmative Major");
+                        if (enth.PA.Quantity == 'P')
+                        {
+                            if (enth.P1.Quantity == 'P')
+                            {
+                                if (enth.P1.Predicate == 'X')
+                                {
+                                    enth.Proof.Add(String.Format("    R2: A{0}{1}-3", enth.Name[0], enth.Name[1]));
+                                    enth.Valid = true;
+                                }
+                                else
+                                {
+                                    enth.Proof.Add("    R3: Impossible");
+                                }
+                            }
+                            else
+                            {
+                                if (enth.P1.Quantity == 'P')
+                                {
+                                    enth.Proof.Add("    R2+3: Impossible");
+                                }
+                                else
+                                {
+                                    enth.Proof.Add(String.Format("    R3: A{0}{1}-1,3", enth.Name[0], enth.Name[1]));
+                                    enth.Valid = true;
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            if (enth.P1.Quantity == 'P')
+                            {
+                                enth.Proof.Add("    R2+3: Impossible");
+                            }
+                            else
+                            {
+                                enth.Proof.Add(String.Format("    R3: A{0}{1}-1,3", enth.Name[0], enth.Name[1]));
+                                enth.Valid = true;
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        if (enth.PA.Quality == 'N')
+                        {
+                            if (enth.PA.Quantity == 'U')
+                            {
+                                if (enth.P1.Predicate == 'Y')
+                                {
+                                    enth.Proof.Add(String.Format("    R2+3: E{0}{1}-3,4", enth.Name[0], enth.Name[1]));
+                                    enth.Valid = true;
+                                }
+                                else
+                                {
+                                    enth.Proof.Add("    R3: Impossible");
+                                }
+                            }
+                            else
+                            {
+                                if (enth.P1.Quantity == 'P')
+                                {
+                                    enth.Proof.Add("    R2+3: Impossible");
+                                }
+                                else
+                                {
+                                    if (enth.P1.Subject == 'X')
+                                    {
+                                        enth.Proof.Add(String.Format("    R6: O{0}{1}-3", enth.Name[0], enth.Name[1]));
+                                        enth.Valid = true;
+                                    }
+                                    else if (enth.P1.Subject == 'Y')
+                                    {
+                                        enth.Proof.Add("    R2+3: Impossible");
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            enth.Proof.Add("    R5: Affirmative Major");
+                            if (enth.PA.Quantity == 'P')
+                            {
+                                if (enth.P1.Quantity == 'P')
+                                {
+                                    string figure = "";
+                                    if (enth.P1.Subject == 'X')
+                                    {
+                                        figure = "3";
+                                    }
+                                    else if (enth.P1.Subject == 'Y')
+                                    {
+                                        figure = "1";
+                                    }
+                                    enth.Proof.Add(String.Format("    R2: A{0}{1}-{2}", enth.Name[0], enth.Name[1], figure));
+                                    enth.Valid = true;
+                                }
+                                else
+                                {
+                                    if (enth.P1.Subject == 'X')
+                                    {
+                                        enth.Proof.Add(String.Format("    R6: I{0}{1}-1,3", enth.Name[0], enth.Name[1]));
+                                        enth.Valid = true;
+                                    }
+                                    else
+                                    {
+                                        enth.Proof.Add("    R2+6: Impossible");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (enth.P1.Quantity == 'P')
+                                {
+                                    enth.Proof.Add("    R2+3: Impossible");
+                                }
+                                else
+                                {
+                                    if (enth.P1.Subject == 'X')
+                                    {
+                                        enth.Proof.Add(String.Format("    R2+3: AAA-1"));
+                                        enth.Valid = true;
+                                    }
+                                    else
+                                    {
+                                        enth.Proof.Add("    R2+3: Impossible");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                enth.Proof.Add("    Standard Form: Impossible");
+            }
+            return enth;
+        }
+    }
+}
