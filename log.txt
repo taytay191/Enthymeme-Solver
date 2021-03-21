@@ -1,0 +1,1290 @@
+
+====================================================
+Premise 1: All Y is X.
+Premise A: All Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  Case (1a): P1 as the major term, PA as the minor term
+    R6: A Conclusion
+   R3: AAA-1
+  Case (1b): PA as the major term, P1 as the minor term
+    R6: A Conclusion
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Affirmative Minor
+    R2+3: A Minor
+    R2+3: AAA-1
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Affirmative Major
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: All X is Y.
+Premise A: All Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Affirmative Minor
+    R2+3: A Minor
+    R2+3: AAA-1
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Affirmative Minor
+    R2+3: A Minor
+    R2+3: AAA-1
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: All Y is X.
+Premise A: All Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  Case (1a): P1 as the major term, PA as the minor term
+    R6: A Conclusion
+    R3: Impossible
+  Case (1b): PA as the major term, P1 as the minor term
+    R6: A Conclusion
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Affirmative Major
+    R2+3: AAA-1
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Affirmative Major
+    R2+3: Impossible
+
+====================================================
+Premise 1: All X is Y.
+Premise A: All Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  Case (1a): P1 as the major term, PA as the minor term
+    R6: A Conclusion
+    R3: Impossible
+  Case (1b): PA as the major term, P1 as the minor term
+    R6: A Conclusion
+   R3: AAA-1
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Affirmative Minor
+    R2+3: A Minor
+    R2+3: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Affirmative Major
+    R2+3: AAA-1
+
+====================================================
+Premise 1: All Y is X.
+Premise A: No Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R2+3:Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: All X is Y.
+Premise A: No Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R6: AEE-2
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R6: EAE-2
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R2+3:Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: All Y is X.
+Premise A: No Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R3: Impossible
+
+====================================================
+Premise 1: All X is Y.
+Premise A: No Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R6: AEE-4
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R6: EAE-1
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R2+3: EAE-3,4
+
+====================================================
+Premise 1: All Y is X.
+Premise A: Some Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  Case (1a): P1 as the major term, PA as the minor term
+    R3: AII-1
+  Case (1b): PA as the major term, P1 as the minor term
+    R6: A Conclusion
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Affirmative Minor
+    R6: {0}I{1}-1,3
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Affirmative Major
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: All X is Y.
+Premise A: Some Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Affirmative Minor
+    R2+3: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Affirmative Minor
+    R6: {0}I{1}-1,3
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: All Y is X.
+Premise A: Some Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  Case (1a): P1 as the major term, PA as the minor term
+    R3: AII-3
+  Case (1b): PA as the major term, P1 as the minor term
+    R6: A Conclusion
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Affirmative Major
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Affirmative Major
+    R2+6: Impossible
+
+====================================================
+Premise 1: All X is Y.
+Premise A: Some Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Affirmative Minor
+    R2+3: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Affirmative Major
+    R6: IAI-1,3
+
+====================================================
+Premise 1: All Y is X.
+Premise A: Some Z is not Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R2+3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R2+3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R2+3+6: AOO-2
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: All X is Y.
+Premise A: Some Z is not Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: AOO-2
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R2+3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R3: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: All Y is X.
+Premise A: Some Y is not Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R2+3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R3: OAO-2
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R2+3: Impossible
+
+====================================================
+Premise 1: All X is Y.
+Premise A: Some Y is not Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R6: OAO-3
+
+====================================================
+Premise 1: No Y is X.
+Premise A: All Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R6: EAE-1
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R6: AEE-4
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R2+3: EAE-3,4
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: No X is Y.
+Premise A: All Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R6: EAE-2
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R6: AEE-2
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R2+3:Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: No Y is X.
+Premise A: All Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Impossible
+
+====================================================
+Premise 1: No X is Y.
+Premise A: All Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R2+3:Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Impossible
+
+====================================================
+Premise 1: No Y is X.
+Premise A: No Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R4: Affirmative Minor
+    R3: EAE-1
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R3: AEE-1,3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: No X is Y.
+Premise A: No Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R4: Affirmative Minor
+    R3: EAE-1
+  Case (2b): PA as conclusion, P1 as Major premise
+    R4: Affirmative Minor
+    R3: EAE-1
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: No Y is X.
+Premise A: No Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R3: AEE-1,3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R4: Affirmative Major
+    R3: AEE-1,3
+
+====================================================
+Premise 1: No X is Y.
+Premise A: No Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R4: Affirmative Minor
+    R3: EAE-2
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R4: Affirmative Major
+    R3: AEE-1,3
+
+====================================================
+Premise 1: No Y is X.
+Premise A: Some Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R2+3: EIO-1
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R2+3: EIE-3,4
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: No X is Y.
+Premise A: Some Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R2+3: EIO-2
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R3: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: No Y is X.
+Premise A: Some Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R2+3: EIO-3
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Impossible
+
+====================================================
+Premise 1: No X is Y.
+Premise A: Some Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R2+3: EIO-4
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R3: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Impossible
+
+====================================================
+Premise 1: No Y is X.
+Premise A: Some Z is not Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R4: Affirmative Minor
+    R6: I minor
+    R2+3+6: EIO-2,4
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: No X is Y.
+Premise A: Some Z is not Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R4: Affirmative Minor
+    R2+3: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R4: Affirmative Minor
+    R6: I minor
+    R2+3+6: EIO-1,3
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: No Y is X.
+Premise A: Some Y is not Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R4: Affirmative Major
+    R3: AEO-1,3
+
+====================================================
+Premise 1: No X is Y.
+Premise A: Some Y is not Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R4: Affirmative Minor
+    R2+3: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R4: Affirmative Major
+    R3: AEO-1,3
+
+====================================================
+Premise 1: Some Y is X.
+Premise A: All Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Affirmative Minor
+    R2+3: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Affirmative Major
+    R6: IAI-1,3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some X is Y.
+Premise A: All Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Affirmative Minor
+    R6: AII-1,3
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Affirmative Minor
+    R2+3: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is X.
+Premise A: All Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  Case (1a): P1 as the major term, PA as the minor term
+    R3: IAI-3
+  Case (1b): PA as the major term, P1 as the minor term
+    R6: A Conclusion
+    R3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Affirmative Major
+    R2+6: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Affirmative Major
+    R2+3: Impossible
+
+====================================================
+Premise 1: Some X is Y.
+Premise A: All Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  Case (1a): P1 as the major term, PA as the minor term
+    R3: IAI-4
+  Case (1b): PA as the major term, P1 as the minor term
+    R6: A Conclusion
+   R3: AIA-1
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Affirmative Minor
+    R6: AII-1,3
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Affirmative Major
+    R2+3: Impossible
+
+====================================================
+Premise 1: Some Y is X.
+Premise A: No Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R2+3: EIO-4
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R3: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some X is Y.
+Premise A: No Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R2+3: EIO-2
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R3: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is X.
+Premise A: No Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R2+3: EIO-3
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R3: Impossible
+
+====================================================
+Premise 1: Some X is Y.
+Premise A: No Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R2+3: EIO-1
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R2+3: EIE-3,4
+
+====================================================
+Premise 1: Some Y is X.
+Premise A: Some Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Affirmative Minor
+    R2: IAI-4
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Affirmative Major
+    R2: AII-3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some X is Y.
+Premise A: Some Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Affirmative Minor
+    R2: IAI-3
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Affirmative Minor
+    R2: IAI-3
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is X.
+Premise A: Some Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Affirmative Major
+    R2: AII-1
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Affirmative Major
+    R2: AII-1
+
+====================================================
+Premise 1: Some X is Y.
+Premise A: Some Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Affirmative Minor
+    R2: IAI-4
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Affirmative Major
+    R2: AII-3
+
+====================================================
+Premise 1: Some Y is X.
+Premise A: Some Z is not Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R2+3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R2+3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R3: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some X is Y.
+Premise A: Some Z is not Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R2+3: Impossible
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R2+3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R3: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is X.
+Premise A: Some Y is not Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R5: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R2+3: Impossible
+
+====================================================
+Premise 1: Some X is Y.
+Premise A: Some Y is not Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    R5: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    Standard Form: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R2+3: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: All Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R6: OAO-3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: All Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R6: OAO-3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: All Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: OAO-2
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R2+3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: All Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  Case (1a): P1 as Major premise, PA as Minor premise
+    R3: OAO-2
+  Case (1b): PA as Major premise, P1 as Minor premise
+    R2+3: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: No Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R4: Affirmative Minor
+    R2+3+6: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R3: AEO-1,3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: No Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R4: Affirmative Minor
+    R2+3+6: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R3: AEO-1,3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: No Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R3: AEO-1,3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R4: Affirmative Major
+    R2+3: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: No Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R3: AEO-1,3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R4: Affirmative Major
+    R2+3: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: Some Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: Some Z is Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R5: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: Some Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: Some Y is Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R5: Negative Conclusion
+  R2: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R2+3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R5: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: Some Z is not Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R4: Affirmative Minor
+    R2+3: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: Some Z is not Y.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    R4: Affirmative Minor
+    R2+3: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R3: Impossible
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    Standard Form: Impossible
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: Some Y is not Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R2: AOO-3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R4: Affirmative Major
+    R2: AOO-3
+
+====================================================
+Premise 1: Some Y is not X.
+Premise A: Some Y is not Z.
+====================================================
+Case (1): 3rd Order Enthymeme
+  R4: Impossible
+Case (2): 2nd Order Enthymeme
+  Case (2a): P1 as conclusion, PA as Major premise
+    Standard Form: Impossible
+  Case (2b): PA as conclusion, P1 as Major premise
+    Standard Form: Impossible
+Case (3): 1st Order Enthymeme
+  Case (3a): P1 is the conclusion and PA is the minor premise
+    R4: Affirmative Major
+    R2: AOO-3
+  Case (3b): PA is the conclusion and P1 is the minor premise
+    R4: Affirmative Major
+    R2: AOO-3
